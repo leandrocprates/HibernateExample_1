@@ -15,5 +15,9 @@
                 <!--<property name="hbm2ddl.auto">create</property>-->
                 <mapping class="com.mkyong.stock.Stock" />
                 <mapping class="com.mkyong.stock.Category" />
+                <mapping class="com.finnet.model.Doenca" />
+                <mapping class="com.finnet.model.Paciente" />
+                <mapping class="com.finnet.model.Periodo" />
+                
 	</session-factory>
 </hibernate-configuration>

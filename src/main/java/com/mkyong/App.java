@@ -1,5 +1,8 @@
 package com.mkyong;
 
+import com.finnet.model.Doenca;
+import com.finnet.model.Paciente;
+import com.finnet.model.Periodo;
 import java.util.HashSet;
 import java.util.Set;
 import org.hibernate.Session;
@@ -81,6 +84,32 @@ public class App {
                 
             }
                 
-            System.out.println("=============== fim ==================");
+            System.out.println("=============== Teste Finnet  ==================");
+            
+            
+            Query query4 = session.createQuery("from Paciente  ");
+            List<Paciente> list4 = query4.list();
+                
+            for ( Paciente paciente : list4 ){
+                System.out.println(paciente.getId()  );
+                System.out.println(paciente.getName()  );
+                
+                for ( Periodo periodo :   paciente.getPeriodos()  )   {
+                    
+                    System.out.println(periodo.getId()  );
+                    System.out.println(periodo.getName()  );
+                    
+                    
+                    for ( Doenca doenca : periodo.getDoencas() ) {
+                        System.out.println(doenca.getId()  );
+                        System.out.println(doenca.getName()  );
+                    }
+                    
+                }
+                
+                System.out.println( "###################" );
+                
+            }
+            
 	}
 }
